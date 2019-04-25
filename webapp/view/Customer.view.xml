@@ -1,0 +1,114 @@
+<mvc:View controllerName="cap.estimate.controller.Customer" displayBlock="true" height="100%" xmlns="sap.m" xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc" xmlns:tnt="sap.tnt" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form">
+	<!--<Page id="customerPage" showHeader="false">-->
+	<Page id="page2" showHeader="false" class="sapUiSizeCompact detailBg">
+		<content>
+			<!--	<VBox>-->
+			<Panel width="auto" class="sapUiResponsiveMargin bgwhite">
+				<headerToolbar>
+					<Toolbar height="3rem" class="dtlHead">
+						<Title text="Company details" class="detailHeader1"/>
+						<!--<Text text="Description 250 characters" class="rightAlignText"/>-->
+					</Toolbar>
+				</headerToolbar>
+				<content>
+					<f:SimpleForm id="CompanyForm_1" editable="true" layout="ColumnLayout" columnsM="1" columnsL="3" columnsXL="3">
+						<f:content>
+							<!--<core:Title/>-->
+							<Label text="Company name" design="Bold" required="true"/>
+							<Input id="name" value="{/posting/comp_name}"/>
+							<!--<core:Title/>-->
+							<Label text="Sector / Market Unit" design="Bold" required="true"/>
+							<Select id="Sector_Select" selectedKey="CPRD" items="{/SectorCollection}">
+								<items>
+									<core:Item text="{desc}" key="{key}"/>
+								</items>
+							</Select>
+							<!--<core:Title/>-->
+							<Label text="Primary region" design="Bold" required="true"/>
+							<Select id="Region_Select" selectedKey="NA" items="{/RegionCollection}">
+								<items>
+									<core:Item text="{desc}" key="{key}"/>
+								</items>
+							</Select>
+						</f:content>
+					</f:SimpleForm>
+					<f:SimpleForm id="CompanyForm_2" editable="true" layout="ColumnLayout" columnsXL="3" columnsL="3" columnsM="1"
+						singleContainerFullSize="false">
+						<f:content>
+							<!--<core:Title text="" emphasized="true"/>-->
+							<Label text="Client contact name(s)" design="Bold" required="true"/>
+							<TextArea id="client_name" value="{/posting/client_name}" growing="true" growingMaxLines="7" required="true" width="100%" maxLength="250"/>
+							<!--<core:Title text="" emphasized="true"/>-->
+							<Label text="Contact (email)" design="Bold" required="true"/>
+							<TextArea id="client_contact" value="{/posting/client_contact}" growing="true" growingMaxLines="7" required="true" width="100%"
+								maxLength="250"/>
+							<core:Title text=""/>
+						</f:content>
+					</f:SimpleForm>
+				</content>
+			</Panel>
+			<Panel width="auto" class="sapUiResponsiveMargin bgwhite">
+				<headerToolbar>
+					<Toolbar height="3rem" class="dtlHead">
+						<Title text="Capgemini contact details" class="detailHeader1"/>
+					</Toolbar>
+				</headerToolbar>
+				<content>
+					<f:SimpleForm id="CompanyForm_3" editable="true" layout="ColumnLayout" columnsM="1" columnsL="3" columnsXL="3">
+						<f:content>
+							<!--<core:Title/>-->
+							<Label text="Name" design="Bold" required="true"/>
+							<Input id="capg_name" value="{/posting/cap_name}"/>
+							<!--<core:Title/>-->
+							<Label text="Email" design="Bold" required="true"/>
+							<Input id="capg_email" value="{/posting/cap_email}" type="Text">
+								<layoutData>
+									<f:ColumnElementData cellsSmall="6" cellsLarge="6"/>
+								</layoutData>
+							</Input>
+							<Input value="@capgemini.com" editable="false">
+								<layoutData>
+									<f:ColumnElementData cellsSmall="6" cellsLarge="6"/>
+								</layoutData>
+							</Input>
+							<!--<core:Title/>-->
+							<Label text="Phone" design="Bold" required="true"/>
+							<Input id="capg_phone" value="{/posting/cap_phone}" type="Tel"/>
+						</f:content>
+					</f:SimpleForm>
+				</content>
+			</Panel>
+			<!--	<HBox>-->
+			<!--	<Panel width="auto" class="sapUiResponsiveMargin">
+								<headerToolbar>
+									<Toolbar height="3rem">
+										<Title text="Contact Details (Email)"/>
+										<ToolbarSpacer/>
+									</Toolbar>
+								</headerToolbar>
+								<content>
+									<TextArea value="" growingMaxLines="7" width="100%"/>
+								</content>
+							</Panel>
+						</HBox>-->
+			<!--	</VBox>-->
+			<Panel width="auto" class="sapUiResponsiveMargin noBorder boxMdl">
+				<ToolbarSpacer/>
+				<Button text="Next" type="Emphasized" class="nextBtn" press="nextPress"/>
+			</Panel>
+		</content>
+		<footer>
+			<Toolbar height="1.5em" class="custFooter">
+				<ToolbarSpacer/>
+				<Label text="The information contained in this document is proprietary. Copyright © 2019 Capgemini. All rights reserved." class="labelFont">
+					<layoutData>
+						<ToolbarLayoutData shrinkable="true" minWidth="200px"/>
+					</layoutData>
+				</Label>
+				<ToolbarSpacer/>
+			</Toolbar>
+		</footer>
+	</Page>
+	<!--</pages>-->
+</mvc:View>

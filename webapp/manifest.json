@@ -1,0 +1,289 @@
+{
+	"_version": "1.1.0",
+	"sap.app": {
+		"_version": "1.1.0",
+		"id": "cap.estimate",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.32.0"
+		},
+		"dataSources": {
+			"init_data_alias": {
+				"uri": "jsonstore/data.json",
+				"type": "JSON"
+			}
+		}
+	},
+	"sap.ui": {
+		"_version": "1.1.0",
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_bluecrystal"
+		]
+	},
+	"sap.ui5": {
+		"_version": "1.1.0",
+		"dependencies": {
+			"minUI5Version": "1.52.9",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {},
+				"sap.ui.layout": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "cap.estimate.i18n.i18n"
+				}
+			},
+			"init_data": {
+				"type": "sap.ui.model.json.JSONModel",
+				"dataSource": "init_data_alias"
+			}
+		},
+		"resources": {
+			"css": [{
+				"uri": "css/style.css"
+			}]
+		},
+		"routing": {
+			"config": {
+				"viewType": "JS",
+				"routerClass": "sap.m.routing.Router",
+				"viewPath": "cap.estimate.view",
+				"controlId": "appView",
+				"controlAggregation": "pages",
+				"transition": "slide"
+			},
+			"routes": [{
+				"name": "InitialRoute",
+				"pattern": "",
+				"greedy": false,
+				"target": [
+					"LoginPage"
+				]
+			}, {
+				"name": "LoginPage",
+				"pattern": "LoginPage",
+				"greedy": false,
+				"target": [
+					"LoginPage"
+				]
+			}, {
+				"name": "Dashboard",
+				"pattern": "Dashboard/{itemId}",
+				"greedy": false,
+				"target": [
+					"Dashboard"
+				]
+			}, {
+				"name": "Home",
+				"pattern": "Home",
+				"greedy": false,
+				"target": [
+					"Home"
+				]
+			}, {
+				"name": "Customer",
+				"pattern": "Customer",
+				"greedy": false,
+				"target": [
+					"Customer"
+				]
+			}, {
+				"name": "Background",
+				"pattern": "Background",
+				"greedy": false,
+				"target": [
+					"Background"
+				]
+			}, {
+				"name": "Scope",
+				"pattern": "Scope",
+				"greedy": false,
+				"target": [
+					"Scope"
+				]
+			}, {
+				"name": "Data",
+				"pattern": "Data",
+				"greedy": false,
+				"target": [
+					"Data"
+				]
+			}, {
+				"name": "Development",
+				"pattern": "Development",
+				"greedy": false,
+				"target": [
+					"Development"
+				]
+			}, {
+				"name": "POCM",
+				"pattern": "POCM",
+				"greedy": false,
+				"target": [
+					"POCM"
+				]
+			}, {
+				"name": "Others",
+				"pattern": "Others",
+				"greedy": false,
+				"target": [
+					"Others"
+				]
+			}, {
+				"name": "FinalDashBoard",
+				"pattern": "FinalDashBoard",
+				"greedy": false,
+				"target": [
+					"FinalDashBoard"
+				]
+			}, {
+				"name": "Infrastructure",
+				"pattern": "Infrastructure",
+				"greedy": false,
+				"target": [
+					"Infrastructure"
+				]
+			}],
+			"targets": {
+				"Dashboard": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearAggregation": true,
+					"viewName": "dashboard",
+					"viewLevel": 1
+				},
+				"Background": {
+					"viewType": "XML",
+					"parent": "Dashboard",
+					"controlId": "pageContainer",
+					"transition": "show",
+					"clearAggregation": true,
+					"viewName": "Background",
+					"viewLevel": 2
+				},
+				"Home": {
+					"viewType": "XML",
+					"parent": "Dashboard",
+					"controlId": "pageContainer",
+					"transition": "show",
+					"clearAggregation": true,
+					"viewName": "Home",
+					"viewLevel": 2
+				},
+				"Customer": {
+					"viewType": "XML",
+					"parent": "Dashboard",
+					"controlId": "pageContainer",
+					"transition": "show",
+					"clearAggregation": true,
+					"viewName": "Customer",
+					"viewLevel": 2
+				},
+				"Others": {
+					"viewType": "XML",
+					"parent": "Dashboard",
+					"controlId": "pageContainer",
+					"transition": "show",
+					"clearAggregation": true,
+					"viewName": "Others",
+					"viewLevel": 2
+				},
+				"POCM": {
+					"viewType": "XML",
+					"parent": "Dashboard",
+					"controlId": "pageContainer",
+					"transition": "show",
+					"clearAggregation": true,
+					"viewName": "POCM",
+					"viewLevel": 2
+				},
+				"Scope": {
+					"viewType": "XML",
+					"parent": "Dashboard",
+					"controlId": "pageContainer",
+					"transition": "show",
+					"clearAggregation": true,
+					"viewName": "Scope",
+					"viewLevel": 2
+				},
+				"Data": {
+					"viewType": "XML",
+					"parent": "Dashboard",
+					"controlId": "pageContainer",
+					"transition": "show",
+					"clearAggregation": true,
+					"viewName": "Data",
+					"viewLevel": 2
+				},
+				"Infrastructure": {
+					"viewType": "XML",
+					"parent": "Dashboard",
+					"controlId": "pageContainer",
+					"transition": "show",
+					"clearAggregation": true,
+					"viewName": "Infrastructure",
+					"viewLevel": 2
+				},
+				"Development": {
+					"viewType": "XML",
+					"parent": "Dashboard",
+					"controlId": "pageContainer",
+					"transition": "show",
+					"clearAggregation": true,
+					"viewName": "Development",
+					"viewLevel": 2
+				},
+				"FinalDashBoard": {
+					"viewType": "XML",
+					"parent": "Dashboard",
+					"controlId": "pageContainer",
+					"transition": "show",
+					"clearAggregation": true,
+					"viewName": "FinalDashBoard",
+					"viewLevel": 2
+				},
+				"LoginPage": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearAggregation": true,
+					"viewName": "login",
+					"viewLevel": 0
+				}
+			}
+		}
+	},
+	"sap.platform.hcp": {
+		"uri": "webapp",
+		"_version": "1.1.0"
+	}
+}
