@@ -1,0 +1,86 @@
+<mvc:View controllerName="cap.estimate.controller.Infrastructure" displayBlock="true" height="100%" xmlns="sap.m" xmlns:core="sap.ui.core"
+	xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:mvc="sap.ui.core.mvc">
+	<Page id="page2" showHeader="false" class="sapUiSizeCompact detailBg">
+		<content>
+			<Panel width="auto" class="sapUiResponsiveMargin bgwhite1 noBorder">
+				<headerToolbar>
+					<Toolbar height="2rem" class="dtlHead">
+						<Title text="Infrastructure" class="detailHeader1"/>
+						<ToolbarSpacer/>
+					</Toolbar>
+				</headerToolbar>
+				<content>
+					<f:SimpleForm id="InfraForm1" editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="12"
+						adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="3" columnsL="2" columnsM="2"
+						singleContainerFullSize="false">
+						<f:content>
+							<core:Title text="SAP landscape"/>
+							<Label text="Number of productive SAP instances" design="Bold" required="true"/>
+							<Select id="Instance_Select" selectedKey="1">
+								<items>
+									<core:Item text="1" key="1"/>
+									<core:Item text="2" key="2"/>
+									<core:Item text="3" key="3"/>
+									<core:Item text="4" key="4"/>
+									<core:Item text="5" key="5"/>
+								</items>
+							</Select>
+							<Label text="Current SAP enhancement pack level" design="Bold" required="true"/>
+							<Select id="Enhancement_Select" selectedKey="1">
+								<items>
+									<core:Item text="Lesser than / Equal to 6" key="1"/>
+									<core:Item text="7 or 8" key="2"/>
+								</items>
+							</Select>
+							<Label text="Number of connected systems" design="Bold" required="true"/>
+							<Select id="Systems_Select" selectedKey="1">
+								<items>
+									<core:Item text="Lesser than / Equal to 10" key="1"/>
+									<core:Item text="11 - 25" key="2"/>
+									<core:Item text="26 - 50" key="4"/>
+									<core:Item text="Greater than 50" key="5"/>
+								</items>
+							</Select>
+							<core:Title/>
+							<Label text="Key SAP applications in landscape" design="Bold" required="true"/>
+							<MultiComboBox id="KeySap_Multi" selectionChange="handleSelectionChange" selectionFinish="handleSelectionFinish" items="{/KeySAP}">
+								<core:Item key="{key}" text="{desc}"/>
+							</MultiComboBox>
+							<Label text="Size of primary SAP ECC in TB" design="Bold" required="true"/>
+							<Select id="Size_Select" selectedKey="1">
+								<items>
+									<core:Item text="Less than 1TB" key="1"/>
+									<core:Item text="1TB - 2TB" key="2"/>
+									<core:Item text="2TB - 5TB" key="3"/>
+									<core:Item text="6TB - 10TB" key="6"/>
+									<core:Item text="10TB - 20TB" key="12"/>
+									<core:Item text="Greater than 20TB" key="20"/>
+								</items>
+							</Select>
+							<core:Title text="Non-SAP landscape"/>
+							<Label text="List out key non-SAP appplications" design="Bold" required="true"/>
+							<TextArea id="non_sap" value="" growing="true" growingMaxLines="7" width="100%"/>
+						</f:content>
+					</f:SimpleForm>
+				</content>
+			</Panel>
+			<Panel width="auto" class="sapUiResponsiveMargin noBorder boxMdl">
+				<Button text="Previous" type="Emphasized" class="backBtn"/>
+				<ToolbarSpacer/>
+				<Button text="Next" type="Emphasized" class="nextBtn" press="nextPress"/>
+			</Panel>
+		</content>
+		<footer>
+			<Toolbar height="1.5em" class="custFooter">
+				<ToolbarSpacer/>
+				<Label text="The information contained in this document is proprietary. Copyright © 2019 Capgemini. All rights reserved." class="labelFont">
+					<layoutData>
+						<ToolbarLayoutData shrinkable="true" minWidth="200px"/>
+					</layoutData>
+				</Label>
+				<ToolbarSpacer/>
+				<!--<Button text="Next" type="Emphasized" press="nextPress"/>-->
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>
