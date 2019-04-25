@@ -44,7 +44,7 @@
 				</content>
 			</Panel>
 			<!--<Panel width="auto" class="sapUiResponsiveMargin bgWhiteImd noBorder">-->
-			<Table id="idProductsTable" class="sapUiResponsiveMargin" width="95%">
+			<Table id="idProductsTable" class="sapUiResponsiveMargin" width="95%" items="{/tableData}">
 				<headerToolbar>
 					<Toolbar>
 						<content>
