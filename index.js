@@ -12,6 +12,6 @@ app.get('/', function(req, res){
 });
 
 var port = 8081;
-app.listen(process.env.PORT || 8080, function(){
+app.listen(process.env.PORT || port, function(){
      console.log(`connect to localhost ${port}`);
 });
