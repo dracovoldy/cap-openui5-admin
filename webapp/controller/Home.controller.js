@@ -9,6 +9,7 @@ sap.ui.define([
 	return Controller.extend("cap.estimate.controller.Home", {
 
 		onInit: function () {
+			var that = this;
 			// alert("Im alive: View");
 			this.router = this.getOwnerComponent().getRouter();
 
