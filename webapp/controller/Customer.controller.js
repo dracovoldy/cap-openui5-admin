@@ -16,12 +16,14 @@ sap.ui.define([
 			this.getView().setModel(globalModel);
 
 			this.getView().getModel().setProperty("/Visited/" + "Customer" + "/status", 1);
-			
-			this.parseData();
+
+			if (this.getView().getModel().getProperty("/tableData").length > 0) {
+				this.parseData();
+			}
 		},
 		parseData: function () {
 			var capEmail = this.getView().getModel().getProperty("/posting/cap_email");
-			capEmail = capEmail.replace('@capgemini.com','');
+			capEmail = capEmail.replace('@capgemini.com', '');
 			this.getView().byId("capg_email").setValue(capEmail);
 		},
 		nextPress: function () {
@@ -54,7 +56,7 @@ sap.ui.define([
 				this.getView().byId("name").focus();
 				count++;
 				// return false;
-			}else{
+			} else {
 				this.getView().byId("name").setValueState("None");
 			}
 
@@ -64,7 +66,7 @@ sap.ui.define([
 				this.getView().byId("Sector_Select").focus();
 				count++;
 				// return false;
-			}else{
+			} else {
 				this.getView().byId("Sector_Select").setValueState("None");
 			}
 
@@ -74,7 +76,7 @@ sap.ui.define([
 				this.getView().byId("Region_Select").focus();
 				count++;
 				// return false;
-			}else{
+			} else {
 				this.getView().byId("Region_Select").setValueState("None");
 			}
 
@@ -84,60 +86,60 @@ sap.ui.define([
 				this.getView().byId("client_name").focus();
 				count++;
 				// return false;
-			}else{
+			} else {
 				this.getView().byId("client_name").setValueState("None");
 			}
-			
+
 			if (this.getView().byId("client_contact").getValue().trim() === "") {
 				this.getView().byId("client_contact").setValueState("Information");
 				this.getView().byId("client_contact").setValueStateText("Input Required");
 				this.getView().byId("client_contact").focus();
 				count++;
 				// return false;
-			}else{
+			} else {
 				this.getView().byId("client_contact").setValueState("None");
 			}
-			
+
 			if (this.getView().byId("client_title").getValue().trim() === "") {
 				this.getView().byId("client_title").setValueState("Information");
 				this.getView().byId("client_title").setValueStateText("Input Required");
 				this.getView().byId("client_title").focus();
 				count++;
 				// return false;
-			}else{
+			} else {
 				this.getView().byId("client_title").setValueState("None");
 			}
-			
+
 			if (this.getView().byId("capg_name").getValue().trim() === "") {
 				this.getView().byId("capg_name").setValueState("Information");
 				this.getView().byId("capg_name").setValueStateText("Input Required");
 				this.getView().byId("capg_name").focus();
 				count++;
 				// return false;
-			}else{
+			} else {
 				this.getView().byId("capg_name").setValueState("None");
 			}
-			
+
 			if (this.getView().byId("capg_email").getValue().trim() === "") {
 				this.getView().byId("capg_email").setValueState("Information");
 				this.getView().byId("capg_email").setValueStateText("Input Required");
 				this.getView().byId("capg_email").focus();
 				count++;
 				// return false;
-			}else{
+			} else {
 				this.getView().byId("capg_email").setValueState("None");
 			}
-			
+
 			if (this.getView().byId("capg_phone").getValue().trim() === "") {
 				this.getView().byId("capg_phone").setValueState("Information");
 				this.getView().byId("capg_phone").setValueStateText("Input Required");
 				this.getView().byId("capg_phone").focus();
 				count++;
 				// return false;
-			}else{
+			} else {
 				this.getView().byId("capg_phone").setValueState("None");
 			}
-			
+
 			if (count > 0) {
 				return false;
 			}

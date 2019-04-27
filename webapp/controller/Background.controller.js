@@ -18,6 +18,50 @@ sap.ui.define([
 
 			this.attachPopoverOnMouseover(this.byId("drive"), this.byId("popover_it"));
 			this.attachPopoverOnMouseover(this.byId("pain"), this.byId("popover_pain"));
+
+			if (this.getView().getModel().getProperty("/tableData").length > 0) {
+				this.parseData();
+			}
+
+		},
+		parseData: function () {
+			if (this.getView().getModel().getProperty("/posting/bg_sapinterest1") === "Y") {
+				this.getView().getModel().setProperty("/BackgroundCheck/sapCheck1", true);
+			} else {
+				this.getView().getModel().setProperty("/BackgroundCheck/sapCheck1", true);
+			}
+			if (this.getView().getModel().getProperty("/posting/bg_sapinterest2") === "Y") {
+				this.getView().getModel().setProperty("/BackgroundCheck/sapCheck2", true);
+			} else {
+				this.getView().getModel().setProperty("/BackgroundCheck/sapCheck2", true);
+			}
+			
+			if (this.getView().getModel().getProperty("/posting/bg_othinterest1") === "Y") {
+				this.getView().getModel().setProperty("/BackgroundCheck/nsCheck1", true);
+			} else {
+				this.getView().getModel().setProperty("/BackgroundCheck/nsCheck1", true);
+			}
+			if (this.getView().getModel().getProperty("/posting/bg_othinterest2") === "Y") {
+				this.getView().getModel().setProperty("/BackgroundCheck/nsCheck2", true);
+			} else {
+				this.getView().getModel().setProperty("/BackgroundCheck/nsCheck2", true);
+			}
+			if (this.getView().getModel().getProperty("/posting/bg_othinterest3") === "Y") {
+				this.getView().getModel().setProperty("/BackgroundCheck/nsCheck3", true);
+			} else {
+				this.getView().getModel().setProperty("/BackgroundCheck/nsCheck3", true);
+			}
+			if (this.getView().getModel().getProperty("/posting/bg_othinterest4") === "Y") {
+				this.getView().getModel().setProperty("/BackgroundCheck/nsCheck4", true);
+			} else {
+				this.getView().getModel().setProperty("/BackgroundCheck/nsCheck4", true);
+			}
+			if (this.getView().getModel().getProperty("/posting/bg_newcust") === "Y") {
+				this.getView().byId("grpA1").setSelected(true);
+			} else {
+				this.getView().byId("grpA1").setSelected(false);
+			}
+			
 			
 		},
 		isExisting: function (oEvent) {
@@ -64,7 +108,7 @@ sap.ui.define([
 			}
 
 		},
-		showBusyIndicator : function (iDuration, iDelay) {
+		showBusyIndicator: function (iDuration, iDelay) {
 			sap.ui.core.BusyIndicator.show(iDelay);
 
 			if (iDuration && iDuration > 0) {
@@ -73,7 +117,7 @@ sap.ui.define([
 					this._sTimeoutId = null;
 				}
 
-				this._sTimeoutId = jQuery.sap.delayedCall(iDuration, this, function() {
+				this._sTimeoutId = jQuery.sap.delayedCall(iDuration, this, function () {
 					this.hideBusyIndicator();
 				});
 			}
