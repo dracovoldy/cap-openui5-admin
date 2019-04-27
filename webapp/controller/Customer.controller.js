@@ -20,7 +20,9 @@ sap.ui.define([
 			this.parseData();
 		},
 		parseData: function () {
-			
+			var capEmail = this.getView().getModel().getProperty("/posting/cap_email");
+			capEmail = capEmail.replace('@capgemini.com','');
+			this.getView().byId("capg_email").setValue(capEmail);
 		},
 		nextPress: function () {
 			// console.log(this.getView().getModel().getProperty("/Customer"));

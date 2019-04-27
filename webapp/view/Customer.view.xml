@@ -26,7 +26,7 @@
 							</Select>
 							<!--<core:Title/>-->
 							<Label text="Primary region" design="Bold" required="true"/>
-							<Select id="Region_Select" selectedKey="X" items="{/RegionCollection}">
+							<Select id="Region_Select" selectedKey="{init_data>/posting/comp_region}" items="{/RegionCollection}">
 								<items>
 									<core:Item text="{desc}" key="{key}"/>
 								</items>
