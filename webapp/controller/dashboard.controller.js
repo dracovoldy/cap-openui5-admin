@@ -31,7 +31,7 @@ sap.ui.define([
 			MessageToast.show(this.accessToken);
 		},
 		onAfterRendering: function () {
-			this.router.navTo("Customer");
+			this.router.navTo("Home");
 		},
 		onItemSelect: function (oEvent) {
 			var navKey = oEvent.getParameter("item").getKey();
