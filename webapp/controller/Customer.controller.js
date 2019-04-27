@@ -16,6 +16,11 @@ sap.ui.define([
 			this.getView().setModel(globalModel);
 
 			this.getView().getModel().setProperty("/Visited/" + "Customer" + "/status", 1);
+			
+			this.parseData();
+		},
+		parseData: function () {
+			
 		},
 		nextPress: function () {
 			// console.log(this.getView().getModel().getProperty("/Customer"));

@@ -19,7 +19,7 @@
 							<Input id="name" value="{/posting/comp_name}"/>
 							<!--<core:Title/>-->
 							<Label text="Sector / Market Unit" design="Bold" required="true"/>
-							<Select id="Sector_Select" selectedKey="X" items="{/SectorCollection}">
+							<Select id="Sector_Select" selectedKey="{init_data>/posting/comp_sector}" items="{/SectorCollection}">
 								<items>
 									<core:Item text="{desc}" key="{key}"/>
 								</items>
