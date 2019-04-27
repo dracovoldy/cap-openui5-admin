@@ -34,8 +34,8 @@ sap.ui.define([
 
 		},
 		loadRecord: function(oEvent){
-			console.log(oEvent.getSource());
-			console.log(oEvent.getSource().getBindingContext("init_data").getObject());
+			this.getView().getModel().setProperty("/posting", oEvent.getSource().getBindingContext().getObject());
+			this.router.navTo("Customer");
 		}
 
 	});
