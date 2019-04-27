@@ -7,7 +7,6 @@
 					<FlexItemData growFactor="1"/>
 				</layoutData>
 			</Image>
-			<Title text="Data View" />
 			<Input id="inUser" placeholder="Username" value="" type="Text"/>
 			<Input id="inPass" placeholder="Password" value="" type="Password"/>
 			<HBox width="100%">

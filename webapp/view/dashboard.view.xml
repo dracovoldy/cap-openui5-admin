@@ -10,7 +10,7 @@
 				</Button>
 				<ToolbarSpacer width="20px"/>
 				<Image src="./images/logo.gif" width="125px" height="30px" class="logoImage"/>
-				<Text Class="toolbarHeading" text="Renewable Enterprise Assessment Tool"/>
+				<Text class="toolbarHeading" text="Renewable Enterprise Assessment Tool"/>
 				<tnt:ToolHeaderUtilitySeparator/>
 				<ToolbarSpacer>
 					<layoutData>
@@ -26,11 +26,10 @@
 		</tnt:header>
 		<tnt:sideContent class="sideNavItem">
 			<tnt:SideNavigation expanded="true" class="firstNav" itemSelect="onItemSelect">
-				<tnt:NavigationList id="navListItems" class="navItemsCls">
+				<tnt:NavigationList id="navListItems" class="navItemsCls" selectedKey="{/navSelectedKey}" >
 					<tnt:items>
-						<tnt:NavigationListItem id="nav_home" text="Home" icon="sap-icon://home" key="Reports"/>
 						<tnt:NavigationListItem id="nav_comp" text="Company" icon="sap-icon://account" key="Customer"/>
-						<tnt:NavigationListItem id="nav_back" text="Backgound" icon="sap-icon://idea-wall" key="Background"/>
+						<tnt:NavigationListItem id="nav_back" text="Background" icon="sap-icon://idea-wall" key="Background"/>
 						<tnt:NavigationListItem id="nav_scope" text="Scope" icon="sap-icon://co" key="Scope"/>
 						<tnt:NavigationListItem id="nav_infra" text="Infrastructure" icon="sap-icon://building" key="Infrastructure"/>
 						<tnt:NavigationListItem id="nav_dev" text="Development" icon="sap-icon://developer-settings" key="Development"/>

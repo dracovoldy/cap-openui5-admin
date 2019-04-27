@@ -23,7 +23,7 @@
 									<content>-->
 							<f:SimpleForm id="SimpleFormChangeColumn_threeGroups234" editable="true" layout="ColumnLayout" columnsM="2" columnsL="3" columnsXL="4">
 								<f:content>
-									<Label text="Number of EDI subsystems"/>
+									<Label text="Number of EDI subsystems" required="true"/>
 									<Select id="EDI_Select" selectedKey="1">
 										<items>
 											<core:Item text="1" key="1"/>
@@ -32,20 +32,20 @@
 											<core:Item text="4+" key="4"/>
 										</items>
 									</Select>
-									<Label text="Current Middleware platform"/>
+									<Label text="Current Middleware platform" required="true"/>
 									<MultiComboBox id="MIDDL_MultiCombo" selectionChange="handleSelectionChange" selectionFinish="handleSelectionFinish"
 										items="{/DevMiddleware}">
 										<core:Item key="{key}" text="{desc}"/>
 									</MultiComboBox>
-									<Label text="RICEFW matrix"/>
+									<Label text="RICEFW matrix" required="true"/>
 									<Select id="RICEFW_Select" selectedKey="1">
 										<items>
-											<core:Item text="Less than 50" key="1"/>
-											<core:Item text="50 - 125" key="3"/>
-											<core:Item text="126 - 200" key="4"/>
-											<core:Item text="201 - 300" key="5"/>
-											<core:Item text="301 - 500" key="7"/>
-											<core:Item text="Greater than 500" key="8"/>
+											<core:Item text="Less than 50" key="50"/>
+											<core:Item text="50 - 125" key="125"/>
+											<core:Item text="126 - 200" key="200"/>
+											<core:Item text="201 - 300" key="300"/>
+											<core:Item text="301 - 500" key="500"/>
+											<core:Item text="Greater than 500" key="600"/>
 										</items>
 									</Select>
 								</f:content>

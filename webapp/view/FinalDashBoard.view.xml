@@ -4,45 +4,50 @@
 		<pages>
 			<Page showHeader="false" class="sapUiSizeCompact detailBg">
 				<content>
-					<Panel width="auto" class="sapUiTinyMargin">
+					<Panel width="auto" class="sapUiTinyMargin bgWhite removeBorder">
 						<headerToolbar>
-							<Toolbar height="2rem">
-								<Title text="Estimation dashboard"/>
+							<Toolbar height="2rem" class="dtlHead">
+								<Title text="Estimation dashboard" class="detailHeader1"/>
 								<ToolbarSpacer/>
 							</Toolbar>
 						</headerToolbar>
 						<content>
-							<Carousel class="sapUiContentPadding" loop="true">
-								<pages>
-									<VBox>
-										<Title text="Typical S4/HANA System Conversion" class="sapUiSmallMargin"/>
-										<HBox>
-											<VBox>
-												<Title text="As short as" class="sapUiSmallMargin"/>
-												<Title id="short" text="{init_data>/estimate/LowPersonMonths}" class="sapUiSmallMargin"/>
-											</VBox>
-											<VBox>
-												<Title text="As long as" class="sapUiSmallMargin"/>
-												<Title id="long" text="{init_data>/estimate/HighPersonMonths}" class="sapUiSmallMargin"/>
-											</VBox>
-											<VBox>
-												<Title text="Average" class="sapUiSmallMargin"/>
-												<Title id="avg" text="{init_data>/estimate/PersonMonths}" class="sapUiSmallMargin"/>
-											</VBox>
-										</HBox>
-										<Text
-											text="Duration of projects is largely determined by customer complexity (degree of change) and implementing partner preferences / tools / methodologies "></Text>
-									</VBox>
-									<Image src="./images/slides/1.png" alt="S/4 Hana Journey"/>
-									<Image src="./images/slides/2.png" alt="S/4 Hana Conversion Objects"/>
-									<Image src="./images/slides/3.png" alt="S/4 Hana Assessment Approach"/>
-									<Image src="./images/slides/4.png" alt="Ecc Conversion S/4 hana"/>
-									<Image src="./images/slides/5.png" alt="S/4 Hana Range Scenarios"/>
-								</pages>
-							</Carousel>
+							<VBox class="estHeight">
+								<Carousel class="sapUiContentPadding" loop="true" height="100%">
+									<pages>
+										<VBox class="bgWhiteBox">
+											<Text text="Typical S4/HANA System Conversion"/>
+											<HBox width="100%" class="divide3">
+												<VBox class="div1">
+													<Title text="As Short as" class="sapUiSmallMargin subSection"/>
+													<Title id="short" text="{/estimate/LowPersonMonths}" class="sapUiSmallMargin monthsCnt"/>
+												</VBox>
+												<VBox class="div2">
+													<Title text="As Long as" class="sapUiSmallMargin subSection"/>
+													<Title id="long" text="{/estimate/HighPersonMonths}" class="sapUiSmallMargin monthsCnt"/>
+												</VBox>
+												<VBox class="div3">
+													<Title text="Average" class="sapUiSmallMargin subSection"/>
+													<Title id="avg" text="{/estimate/PersonMonths}" class="sapUiSmallMargin monthsCnt"/>
+												</VBox>
+											</HBox>
+											<Text
+												text="Duration of projects is largely determined by customer complexity (degree of change) and implementing partner preferences / tools / methodologies "></Text>
+										</VBox>
+										<Image src="./images/slides/1.png" alt="S/4 Hana Journey" height="auto"/>
+										<Image src="./images/slides/2.png" alt="S/4 Hana Conversion Objects" height="auto"/>
+										<Image src="./images/slides/3.png" alt="S/4 Hana Assessment Approach" height="auto"/>
+										<Image src="./images/slides/4.png" alt="Ecc Conversion S/4 hana" height="auto"/>
+										<Image src="./images/slides/5.png" alt="S/4 Hana Range Scenarios" height="auto"/>
+									</pages>
+								</Carousel>
+							</VBox>
 						</content>
 					</Panel>
-					<Button text="Back" type="Emphasized" press="onBack"/>
+					<Panel width="auto" class="sapUiResponsiveMargin noBorder boxMdl">
+						<ToolbarSpacer/>
+						<Button text="Back" type="Emphasized" press="startOver" class="backBtn"/>
+					</Panel>
 				</content>
 			</Page>
 		</pages>
