@@ -10,10 +10,46 @@ sap.ui.define([
 			this.router = this.getOwnerComponent().getRouter();
 			var globalModel = this.getOwnerComponent().getModel("init_data");
 			this.getView().setModel(globalModel);
+
+			if (this.getView().getModel().getProperty("/tableData").length > 0) {
+				this.parseData();
+			}
+		},
+		parseData: function () {
+			if (this.getView().getModel().getProperty("/posting/sc_bp_ptp") > 0) {
+				this.getView().byId("PTP_Check").setSelected(true);
+			} else {
+				this.getView().byId("PTP_Check").setSelected(false);
+			}
+			if (this.getView().getModel().getProperty("/posting/sc_bp_otc") > 0) {
+				this.getView().byId("OTC_Check").setSelected(true);
+			} else {
+				this.getView().byId("OTC_Check").setSelected(false);
+			}
+			if (this.getView().getModel().getProperty("/posting/sc_bp_mts") > 0) {
+				this.getView().byId("MTS_Check").setSelected(true);
+			} else {
+				this.getView().byId("MTS_Check").setSelected(false);
+			}
+			if (this.getView().getModel().getProperty("/posting/sc_bp_dts") > 0) {
+				this.getView().byId("DTS_Check").setSelected(true);
+			} else {
+				this.getView().byId("DTS_Check").setSelected(false);
+			}
+			if (this.getView().getModel().getProperty("/posting/sc_bp_ftm") > 0) {
+				this.getView().byId("FIN_Check").setSelected(true);
+			} else {
+				this.getView().byId("FIN_Check").setSelected(false);
+			}
+			if (this.getView().getModel().getProperty("/posting/sc_bp_other").length > 0) {
+				this.getView().byId("OTH_Check").setSelected(true);
+				this.getView().byId("OTH_Value").setValue(this.getView().getModel().getProperty("/posting/sc_bp_other"));
+			} else {
+				this.getView().byId("OTH_Check").setSelected(false);
+			}
+
 		},
 		nextPress: function () {
-			// console.log(this.getView().getModel().getProperty("/posting"));
-
 			this.getView().getModel().setProperty("/posting/sc_reg_na_x", "");
 			this.getView().getModel().setProperty("/posting/sc_reg_na_x", "");
 			this.getView().getModel().setProperty("/posting/sc_reg_na_x", "");
