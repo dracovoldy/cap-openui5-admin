@@ -28,37 +28,37 @@ sap.ui.define([
 			if (this.getView().getModel().getProperty("/posting/bg_sapinterest1") === "Y") {
 				this.getView().getModel().setProperty("/BackgroundCheck/sapCheck1", true);
 			} else {
-				this.getView().getModel().setProperty("/BackgroundCheck/sapCheck1", true);
+				this.getView().getModel().setProperty("/BackgroundCheck/sapCheck1", false);
 			}
 			if (this.getView().getModel().getProperty("/posting/bg_sapinterest2") === "Y") {
 				this.getView().getModel().setProperty("/BackgroundCheck/sapCheck2", true);
 			} else {
-				this.getView().getModel().setProperty("/BackgroundCheck/sapCheck2", true);
+				this.getView().getModel().setProperty("/BackgroundCheck/sapCheck2", false);
 			}
 			
 			if (this.getView().getModel().getProperty("/posting/bg_othinterest1") === "Y") {
 				this.getView().getModel().setProperty("/BackgroundCheck/nsCheck1", true);
 			} else {
-				this.getView().getModel().setProperty("/BackgroundCheck/nsCheck1", true);
+				this.getView().getModel().setProperty("/BackgroundCheck/nsCheck1", false);
 			}
 			if (this.getView().getModel().getProperty("/posting/bg_othinterest2") === "Y") {
 				this.getView().getModel().setProperty("/BackgroundCheck/nsCheck2", true);
 			} else {
-				this.getView().getModel().setProperty("/BackgroundCheck/nsCheck2", true);
+				this.getView().getModel().setProperty("/BackgroundCheck/nsCheck2", false);
 			}
 			if (this.getView().getModel().getProperty("/posting/bg_othinterest3") === "Y") {
 				this.getView().getModel().setProperty("/BackgroundCheck/nsCheck3", true);
 			} else {
-				this.getView().getModel().setProperty("/BackgroundCheck/nsCheck3", true);
+				this.getView().getModel().setProperty("/BackgroundCheck/nsCheck3", false);
 			}
 			if (this.getView().getModel().getProperty("/posting/bg_othinterest4") === "Y") {
 				this.getView().getModel().setProperty("/BackgroundCheck/nsCheck4", true);
 			} else {
-				this.getView().getModel().setProperty("/BackgroundCheck/nsCheck4", true);
+				this.getView().getModel().setProperty("/BackgroundCheck/nsCheck4", false);
 			}
 			if (this.getView().getModel().getProperty("/posting/bg_newcust") === "Y") {
 				this.getView().byId("grpA1").setSelected(true);
-			} else {
+			} else if (this.getView().getModel().getProperty("/posting/bg_newcust") === "N") {
 				this.getView().byId("grpA1").setSelected(false);
 			}
 			
