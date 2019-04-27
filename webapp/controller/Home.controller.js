@@ -32,6 +32,10 @@ sap.ui.define([
 				}
 			});
 
+		},
+		loadRecord: function(oEvent){
+			console.log(oEvent.getSource());
+			console.log(oEvent.getSource().getBindingContext("init_data").getObject());
 		}
 
 	});

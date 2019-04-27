@@ -75,7 +75,7 @@
 					</Column>
 				</columns>
 				<items>
-					<ColumnListItem type="Navigation">
+					<ColumnListItem type="Navigation" press="loadRecord">
 						<cells>
 							<Text text="{entry_id}"/>
 							<Text text="{comp_name}"/>
