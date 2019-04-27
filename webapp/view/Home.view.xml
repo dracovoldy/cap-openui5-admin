@@ -75,7 +75,7 @@
 					</Column>
 				</columns>
 				<items>
-					<ColumnListItem type="Active">
+					<ColumnListItem type="Navigation">
 						<cells>
 							<Text text="{entry_id}"/>
 							<Text text="{comp_name}"/>
