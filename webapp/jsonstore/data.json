@@ -1,22 +1,113 @@
 {
-	"tableData": [],
+	"navSelectedKey": "Customer",
+	"Visited": {
+		"Customer": {
+			"status": 0,
+			"name": "Company"
+		},
+		"Background": {
+			"status": 0,
+			"name": "Background"
+		},
+		"Scope": {
+			"status": 0,
+			"name": "Scope"
+		},
+		"Infrastructure": {
+			"status": 0,
+			"name": "Infrastructure"
+		},
+		"Development": {
+			"status": 0,
+			"name": "Development"
+		},
+		"Data": {
+			"status": 0,
+			"name": "Data"
+		},
+		"POCM": {
+			"status": 0,
+			"name": "Management"
+		},
+		"Others": {
+			"status": 0,
+			"name": "Others"
+		}
+	},
+	"BackgroundCheck": {
+		"sapCheck1": false,
+		"sapCheck2": false,
+		"nsCheck1": false,
+		"nsCheck2": false,
+		"nsCheck3": false,
+		"nsCheck4": false
+	},
+	"YearCollection": [{
+		"year": "Please select",
+		"key": "0000"
+	},{
+		"year": "2010 or prior",
+		"key": "2010"
+	}, {
+		"year": "2011",
+		"key": "2011"
+
+	}, {
+		"year": "2012",
+		"key": "2012"
+
+	}, {
+		"year": "2013",
+		"key": "2013"
+
+	}, {
+		"year": "2014",
+		"key": "2014"
+
+	}, {
+		"year": "2015",
+		"key": "2015"
+
+	}, {
+		"year": "2016",
+		"key": "2016"
+
+	}, {
+		"year": "2017",
+		"key": "2017"
+
+	}, {
+		"year": "2018",
+		"key": "2018"
+
+	}, {
+		"year": "2019",
+		"key": "2019"
+
+	}],
 	"estimateId": "",
 	"estimate": {},
 
 	"SectorCollection": [{
+		"key": "X",
+		"desc": "Please select"
+	},{
 		"key": "CPRD",
-		"desc": "Consumer Products, Retail, Distribution"
+		"desc": "Consumer products, retail, distribution"
 	}, {
 		"key": "EUC",
-		"desc": "Energy, Utilities, Chemicals"
+		"desc": "Energy, utilities, chemicals"
 	}, {
 		"key": "MALS",
-		"desc": "Manufacturing, Auto, Life Sciences"
+		"desc": "Manufacturing, auto, life sciences"
 	}, {
 		"key": "TMT",
-		"desc": "Telecomm, Media, Entertainment"
+		"desc": "Telecomm, media, entertainment"
 	}],
 	"RegionCollection": [{
+		"key": "X",
+		"desc": "Please select"
+	},{
 		"key": "NA",
 		"desc": "North America"
 	}, {
@@ -26,7 +117,7 @@
 		"key": "APAC",
 		"desc": "Asia Pacific"
 	}, {
-		"key": "EUR",
+		"key": "EU",
 		"desc": "Europe"
 	}],
 	"ScopeRegionSizes": [{
@@ -132,7 +223,7 @@
 		"desc": "GTS"
 	}, {
 		"key": "8",
-		"desc": "ATTP"
+		"desc": "ATTP (Pharma)"
 	}, {
 		"key": "9",
 		"desc": "TMS"
@@ -144,12 +235,21 @@
 		"desc": "Vistex"
 	}, {
 		"key": "12",
-		"desc": "MDG"
+		"desc": "SAP MDG / MDG Hub"
 	}, {
 		"key": "13",
 		"desc": "OpenText"
 	}, {
 		"key": "14",
+		"desc": "BPC"
+	}, {
+		"key": "15",
+		"desc": "SAP BW"
+	}, {
+		"key": "16",
+		"desc": "GRC"
+	}, {
+		"key": "17",
 		"desc": "Others"
 	}],
 	"DevMiddleware": [{
@@ -167,6 +267,9 @@
 	}, {
 		"key": "5",
 		"desc": "Other"
+	}, {
+		"key": "6",
+		"desc": "Dell Boomi"
 	}],
 	"posting": {
 
