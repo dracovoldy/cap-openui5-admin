@@ -71,8 +71,7 @@ sap.ui.define([
 			if (data.selected) {
 				this.getView().byId("bg_hbox").setVisible(true);
 				this.getView().getModel().setProperty("/posting/bg_newcust", "N");
-				var iYear = this.getView().byId("impYear").getSelectedKey();
-				this.getView().getModel().setProperty("/posting/bg_impyear", iYear);
+			
 			} else {
 				this.getView().byId("bg_hbox").setVisible(false);
 				this.getView().getModel().setProperty("/posting/bg_newcust", "Y");
@@ -102,6 +101,7 @@ sap.ui.define([
 					this.getView().getModel().setProperty("/Visited/" + "Background" + "/status", 2);
 					this.getView().getModel().setProperty("/Visited/" + "Scope" + "/status", 1);
 					this.getView().getModel().setProperty("/navSelectedKey", "Scope");
+					console.log(this.getView().getModel().getProperty("/posting"));
 					this.router.navTo("Scope");
 				}
 
