@@ -8,26 +8,34 @@ sap.ui.define([
 			this.router = this.getOwnerComponent().getRouter();
 			var globalModel = this.getOwnerComponent().getModel("init_data");
 			this.getView().setModel(globalModel);
+
+			if (this.getView().getModel().getProperty("/tableData").length > 0) {
+				this.parseData();
+			}
 		},
-		nextPress: function (oEvent){
+		parseData: function () {
+			var aKeys = this.getView().getModel().getProperty("/posting/if_dev_mdlw_desc").split(",");
+			this.getView().byId("MIDDL_MultiCombo").setSelectedKeys(aKeys);
+		},
+		nextPress: function (oEvent) {
 			// var that = this;
-			
-			var EDI_Select = parseInt(this.getView().byId("EDI_Select").getSelectedKey(),10);
+
+			var EDI_Select = parseInt(this.getView().byId("EDI_Select").getSelectedKey(), 10);
 			this.getView().getModel().setProperty("/posting/if_dev_edi_v", EDI_Select);
-			
+
 			var aMiddlewares = this.getView().byId("MIDDL_MultiCombo").getSelectedItems();
 			this.getView().getModel().setProperty("/posting/if_dev_mdlw_v", aMiddlewares.length);
-			
+
 			var middleware_desc = "";
-			aMiddlewares.map(function (item){
-				middleware_desc = middleware_desc +item.getKey() + ",";	
+			aMiddlewares.map(function (item) {
+				middleware_desc = middleware_desc + item.getKey() + ",";
 			});
 			middleware_desc = middleware_desc.slice(0, -1);
 			this.getView().getModel().setProperty("/posting/if_dev_mdlw_desc", middleware_desc);
-			
-			var RICEFW_Select = parseInt(this.getView().byId("RICEFW_Select").getSelectedKey(),10);
+
+			var RICEFW_Select = parseInt(this.getView().byId("RICEFW_Select").getSelectedKey(), 10);
 			this.getView().getModel().setProperty("/posting/if_dev_ricefw_v", RICEFW_Select);
-			
+
 			// console.log(this.getView().getModel().getProperty("/posting"));
 			if (this.validate()) {
 				this.getView().getModel().setProperty("/Visited/" + "Development" + "/status", 2);
@@ -45,10 +53,10 @@ sap.ui.define([
 				this.getView().byId("MIDDL_MultiCombo").focus();
 				count++;
 				// return false;
-			}else{
+			} else {
 				this.getView().byId("MIDDL_MultiCombo").setValueState("None");
 			}
-			
+
 			// if (this.getView().byId("dev_comments").getValue().trim() === "") {
 			// 	this.getView().byId("dev_comments").setValueState("Information");
 			// 	this.getView().byId("dev_comments").setValueStateText("Input Required");
@@ -56,14 +64,13 @@ sap.ui.define([
 			// 	count++;
 			// 	// return false;
 			// }
-			
-			
-			if(count > 0){
+
+			if (count > 0) {
 				return false;
 			}
 			this.getView().byId("MIDDL_MultiCombo").setValueState("None");
 			this.getView().byId("dev_comments").setValueState("None");
-			
+
 			return true;
 		}
 	});
