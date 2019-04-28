@@ -19,12 +19,13 @@ sap.ui.define([
 			var CapgContact = this.getView().getModel().getProperty("/posting/cap_name");
 
 			var payload = this.getView().getModel().getProperty("/posting");
+			var id = this.getView().getModel().getProperty("/posting/entry_id");
 			//prepare post
-			var url = "http://10.154.52.73:3000/api/estimate";
+			var url = "http://10.154.52.73:3000/api/estimate/" + id ;
 
 			$.ajax({
 				url: url,
-				type: 'POST',
+				type: 'PUT',
 				data: payload,
 				dataType: 'json',
 				contentType: 'application/x-www-form-urlencoded',
@@ -32,7 +33,7 @@ sap.ui.define([
 					console.log(data);
 
 					that.getView().getModel().setProperty("/estimateId", data.insertId);
-					MessageBox.success("Estimate Generated for: " + Customer + "\n Capgemini PoC: " + CapgContact, {
+					MessageBox.success("Estimate Modified for: " + Customer + "\n Capgemini PoC: " + CapgContact, {
 						title: "Success",
 						actions: [sap.m.MessageBox.Action.OK],
 						onClose: function (sAction) {
