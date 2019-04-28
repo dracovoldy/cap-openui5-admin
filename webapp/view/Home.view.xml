@@ -16,14 +16,14 @@
 							<Input id="name" />
 							<!--<core:Title/>-->
 							<Label text="Sector / Market Unit" design="Bold" />
-							<Select id="Sector_Select" selectedKey="CPRD" items="{/SectorCollection}">
+							<Select id="Sector_Select" selectedKey="X" items="{/SectorCollection}">
 								<items>
 									<core:Item text="{desc}" key="{key}"/>
 								</items>
 							</Select>
 							<!--<core:Title/>-->
 							<Label text="Primary region" design="Bold"/>
-							<Select id="Region_Select" selectedKey="NA" items="{/RegionCollection}">
+							<Select id="Region_Select" selectedKey="X" items="{/RegionCollection}">
 								<items>
 									<core:Item text="{desc}" key="{key}"/>
 								</items>
@@ -36,8 +36,8 @@
 							<Label text="Client contact name(s)" design="Bold" />
 							<Input id="client_name" />
 							<!--<core:Title text="" emphasized="true"/>-->
-							<Label text="Contact (email)" design="Bold"/>
-							<Input id="client_contact" />
+							<Label text="Capgemini contact" design="Bold"/>
+							<Input id="capg_contact" />
 							<!--<core:Title text=""/>-->
 						</f:content>
 					</f:SimpleForm>
