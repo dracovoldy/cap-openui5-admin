@@ -9,6 +9,20 @@ sap.ui.define([
 			this.router = this.getOwnerComponent().getRouter();
 			var globalModel = this.getOwnerComponent().getModel("init_data");
 			this.getView().setModel(globalModel);
+			if (this.getView().getModel().getProperty("/tableData").length > 0) {
+				this.parseData();
+			}
+		},
+		parseData: function () {
+		
+			this.getView().byId("Data_Material_Select").setSelectedKey(this.getView().getModel().getProperty("/posting/data_matl").toString());
+			this.getView().byId("Data_Cust_Select").setSelectedKey(this.getView().getModel().getProperty("/posting/data_cust").toString());
+			this.getView().byId("Data_Vendor_Select").setSelectedKey(this.getView().getModel().getProperty("/posting/data_vend").toString());
+			this.getView().byId("Data_Assets_Select").setSelectedKey(this.getView().getModel().getProperty("/posting/data_asst").toString());
+			this.getView().byId("Data_Gl_Select").setSelectedKey(this.getView().getModel().getProperty("/posting/data_glac").toString());
+			this.getView().byId("Data_cost_Select").setSelectedKey(this.getView().getModel().getProperty("/posting/data_cost").toString());
+			this.getView().byId("Data_profit_Select").setSelectedKey(this.getView().getModel().getProperty("/posting/data_prof").toString());
+			
 		},
 		nextPress: function (oEvent) {
 			// var that = this;
