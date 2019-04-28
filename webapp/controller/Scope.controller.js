@@ -47,6 +47,10 @@ sap.ui.define([
 			} else {
 				this.getView().byId("OTH_Check").setSelected(false);
 			}
+			
+			this.getView().byId("Scenarios1").setSelectedKey(this.getView().getModel().getProperty("/posting/sc_ints_v").toString());
+			this.getView().byId("Scenarios2").setSelectedKey(this.getView().getModel().getProperty("/posting/sc_unts_v").toString());
+			this.getView().byId("Scenarios3").setSelectedKey(this.getView().getModel().getProperty("/posting/sc_user_v").toString());
 
 		},
 		nextPress: function () {
