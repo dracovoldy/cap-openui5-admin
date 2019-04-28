@@ -50,7 +50,7 @@
 						<content>
 							<Title text="Estimates" level="H2"/>
 							<ToolbarSpacer/>
-							<Button text="Go" type="Emphasized" class="GoPress"/>
+							<Button text="Go" type="Emphasized" class="nextBtn" press="GoPress"/>
 						</content>
 					</Toolbar>
 				</headerToolbar>
