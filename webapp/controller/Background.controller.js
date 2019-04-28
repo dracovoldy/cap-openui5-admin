@@ -58,8 +58,10 @@ sap.ui.define([
 			}
 			if (this.getView().getModel().getProperty("/posting/bg_newcust") === "Y") {
 				this.getView().byId("grpA1").setSelected(true);
+				this.getView().byId("grpA2").setSelected(false);
 			} else if (this.getView().getModel().getProperty("/posting/bg_newcust") === "N") {
 				this.getView().byId("grpA1").setSelected(false);
+				this.getView().byId("grpA2").setSelected(true);
 			}
 			
 			
