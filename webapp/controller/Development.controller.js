@@ -16,6 +16,8 @@ sap.ui.define([
 		parseData: function () {
 			var aKeys = this.getView().getModel().getProperty("/posting/if_dev_mdlw_desc").split(",");
 			this.getView().byId("MIDDL_MultiCombo").setSelectedKeys(aKeys);
+			this.getView().byId("EDI_Select").setSelectedKey(this.getView().getModel().getProperty("/posting/if_dev_edi_v").toString());
+			this.getView().byId("RICEFW_Select").setSelectedKey(this.getView().getModel().getProperty("/posting/if_dev_ricefw_v").toString());
 		},
 		nextPress: function (oEvent) {
 			// var that = this;
