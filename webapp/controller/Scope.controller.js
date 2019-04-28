@@ -68,6 +68,11 @@ sap.ui.define([
 			this.getView().byId("APAC_Off").setSelectedKey(this.getView().getModel().getProperty("/posting/sc_loc_apac_vb").toString());
 			this.getView().byId("APAC_Dcs").setSelectedKey(this.getView().getModel().getProperty("/posting/sc_loc_apac_vc").toString());
 			this.getView().byId("APAC_Sos").setSelectedKey(this.getView().getModel().getProperty("/posting/sc_loc_apac_vd").toString());
+			
+			this.getView().byId("NA_Plants").setSelectedKey(this.getView().getModel().getProperty("/posting/sc_loc_na_va").toString());
+			this.getView().byId("NA_Off").setSelectedKey(this.getView().getModel().getProperty("/posting/sc_loc_na_vb").toString());
+			this.getView().byId("NA_Dcs").setSelectedKey(this.getView().getModel().getProperty("/posting/sc_loc_na_vc").toString());
+			this.getView().byId("NA_Sos").setSelectedKey(this.getView().getModel().getProperty("/posting/sc_loc_na_vd").toString());
 
 		},
 		nextPress: function () {
