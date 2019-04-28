@@ -73,6 +73,9 @@
 					<Column hAlign="Center">
 						<Text text="Client email"/>
 					</Column>
+					<Column hAlign="Center">
+						<Text text="Capgemini contact"/>
+					</Column>
 				</columns>
 				<items>
 					<ColumnListItem type="Navigation" press="loadRecord">
@@ -83,6 +86,7 @@
 							<Text text="{comp_region}"/>
 							<Text text="{client_name}"/>
 							<Text text="{client_contact}"/>
+							<Text text="{cap_name}"/>
 						</cells>
 					</ColumnListItem>
 				</items>

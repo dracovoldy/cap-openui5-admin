@@ -93,7 +93,7 @@ sap.ui.define([
 			
 			if (CapgValue.length > 0) {
 				var filterKey = new Filter(
-					"client_contact",
+					"cap_name",
 					sap.ui.model.FilterOperator.Contains, CapgValue
 				);
 				oFilter.push(filterKey);
