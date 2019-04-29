@@ -41,7 +41,7 @@ sap.ui.define([
 			} else {
 				this.getView().byId("FIN_Check").setSelected(false);
 			}
-			if (this.getView().getModel().getProperty("/posting/sc_bp_other").length > 0) {
+			if (this.getView().getModel().getProperty("/posting/sc_bp_other")) {
 				this.getView().byId("OTH_Check").setSelected(true);
 				this.getView().byId("OTH_Value").setValue(this.getView().getModel().getProperty("/posting/sc_bp_other"));
 			} else {
