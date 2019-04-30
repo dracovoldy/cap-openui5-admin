@@ -14,7 +14,7 @@ sap.ui.define([
 				this.parseData();
 			}
 		},
-		onAfterRendering: function () {
+		onBeforeRendering: function () {
 			if (this.getView().getModel().getProperty("/tableData").length > 0) {
 				this.parseData();
 			}
