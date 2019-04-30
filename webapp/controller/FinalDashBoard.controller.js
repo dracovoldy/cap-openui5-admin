@@ -11,22 +11,10 @@ sap.ui.define([
 			var globalModel = this.getOwnerComponent().getModel("init_data");
 			this.getView().setModel(globalModel);
 
-		},
-		showBusyIndicator: function (iDuration, iDelay) {
-			sap.ui.core.BusyIndicator.show(iDelay);
+			this.router.attachRouteMatched(this.handleRouteMatched, this);
 
-			if (iDuration && iDuration > 0) {
-				if (this._sTimeoutId) {
-					jQuery.sap.clearDelayedCall(this._sTimeoutId);
-					this._sTimeoutId = null;
-				}
-
-				this._sTimeoutId = jQuery.sap.delayedCall(iDuration, this, function () {
-					this.hideBusyIndicator();
-				});
-			}
 		},
-		onAfterRendering: function () {
+		handleRouteMatched: function (evt) {
 			var that = this;
 			var estimateId = this.getView().getModel().getProperty("/estimateId");
 
@@ -49,6 +37,21 @@ sap.ui.define([
 				}
 			});
 		},
+		showBusyIndicator: function (iDuration, iDelay) {
+			sap.ui.core.BusyIndicator.show(iDelay);
+
+			if (iDuration && iDuration > 0) {
+				if (this._sTimeoutId) {
+					jQuery.sap.clearDelayedCall(this._sTimeoutId);
+					this._sTimeoutId = null;
+				}
+
+				this._sTimeoutId = jQuery.sap.delayedCall(iDuration, this, function () {
+					this.hideBusyIndicator();
+				});
+			}
+		},
+
 		startOver: function (oEvent) {
 			this.showBusyIndicator(10000, 0);
 			location.reload();
