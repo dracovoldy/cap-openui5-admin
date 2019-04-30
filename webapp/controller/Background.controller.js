@@ -22,12 +22,15 @@ sap.ui.define([
 			if (this.getView().getModel().getProperty("/tableData").length > 0) {
 				this.parseData();
 			}
-
+			this.router.attachRouteMatched(this.handleRouteMatched, this);
 		},
-		onBeforeRendering: function () {
-			if (this.getView().getModel().getProperty("/tableData").length > 0) {
-				this.parseData();
+		handleRouteMatched: function (evt) {
+			if (evt.getParameter("name") !== "Background") {
+				if (this.getView().getModel().getProperty("/tableData").length > 0) {
+					this.parseData();
+				}
 			}
+
 		},
 		parseData: function () {
 			if (this.getView().getModel().getProperty("/posting/bg_sapinterest1") === "Y") {

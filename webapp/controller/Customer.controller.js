@@ -24,9 +24,12 @@ sap.ui.define([
 			this.router.attachRouteMatched(this.handleRouteMatched, this);
 		},
 		handleRouteMatched: function (evt) {
-			if (this.getView().getModel().getProperty("/tableData").length > 0) {
-				this.parseData();
+			if (evt.getParameter("name") !== "Customer") {
+				if (this.getView().getModel().getProperty("/tableData").length > 0) {
+					this.parseData();
+				}
 			}
+
 		},
 		onBeforeShow: function () {
 			if (this.getView().getModel().getProperty("/tableData").length > 0) {
