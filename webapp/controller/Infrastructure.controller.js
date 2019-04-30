@@ -14,6 +14,11 @@ sap.ui.define([
 				this.parseData();
 			}
 		},
+		onAfterRendering: function () {
+			if (this.getView().getModel().getProperty("/tableData").length > 0) {
+				this.parseData();
+			}
+		},
 		parseData: function () {
 			this.getView().byId("Instance_Select").setSelectedKey(this.getView().getModel().getProperty("/posting/if_psap_v").toString());
 			this.getView().byId("Enhancement_Select").setSelectedKey(this.getView().getModel().getProperty("/posting/if_plvl_v").toString());

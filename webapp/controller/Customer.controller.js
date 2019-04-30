@@ -21,6 +21,11 @@ sap.ui.define([
 				this.parseData();
 			}
 		},
+		onAfterRendering: function () {
+			if (this.getView().getModel().getProperty("/tableData").length > 0) {
+				this.parseData();
+			}
+		},
 		parseData: function () {
 			var capEmail = this.getView().getModel().getProperty("/posting/cap_email");
 			capEmail = capEmail.replace('@capgemini.com', '');

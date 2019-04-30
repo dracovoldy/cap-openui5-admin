@@ -24,6 +24,11 @@ sap.ui.define([
 			}
 
 		},
+		onAfterRendering: function () {
+			if (this.getView().getModel().getProperty("/tableData").length > 0) {
+				this.parseData();
+			}
+		},
 		parseData: function () {
 			if (this.getView().getModel().getProperty("/posting/bg_sapinterest1") === "Y") {
 				this.getView().getModel().setProperty("/BackgroundCheck/sapCheck1", true);

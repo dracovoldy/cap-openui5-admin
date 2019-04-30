@@ -13,6 +13,11 @@ sap.ui.define([
 				this.parseData();
 			}
 		},
+		onAfterRendering: function () {
+			if (this.getView().getModel().getProperty("/tableData").length > 0) {
+				this.parseData();
+			}
+		},
 		parseData: function () {
 		
 			this.getView().byId("Data_Material_Select").setSelectedKey(this.getView().getModel().getProperty("/posting/data_matl").toString());

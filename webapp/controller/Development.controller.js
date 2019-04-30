@@ -13,6 +13,11 @@ sap.ui.define([
 				this.parseData();
 			}
 		},
+		onAfterRendering: function () {
+			if (this.getView().getModel().getProperty("/tableData").length > 0) {
+				this.parseData();
+			}
+		},
 		parseData: function () {
 			var aKeys = this.getView().getModel().getProperty("/posting/if_dev_mdlw_desc").split(",");
 			this.getView().byId("MIDDL_MultiCombo").setSelectedKeys(aKeys);
