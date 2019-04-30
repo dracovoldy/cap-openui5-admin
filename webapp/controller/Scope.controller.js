@@ -15,6 +15,11 @@ sap.ui.define([
 				this.parseData();
 			}
 		},
+		onAfterRendering: function () {
+			if (this.getView().getModel().getProperty("/tableData").length > 0) {
+				this.parseData();
+			}
+		},
 		parseData: function () {
 			if (this.getView().getModel().getProperty("/posting/sc_bp_ptp") > 0) {
 				this.getView().byId("PTP_Check").setSelected(true);
