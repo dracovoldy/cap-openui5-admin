@@ -60,9 +60,11 @@ sap.ui.define([
 				this.getView().byId("grpA1").setSelected(false);
 				this.getView().byId("grpA2").setSelected(true);
 				this.getView().byId("impYear").setSelectedKey(this.getView().getModel().getProperty("/posting/bg_impyear"));
+				this.getView().byId("bg_hbox").setVisible(true);
 			} else if (this.getView().getModel().getProperty("/posting/bg_newcust") === "N") {
 				this.getView().byId("grpA1").setSelected(true);
 				this.getView().byId("grpA2").setSelected(false);
+				this.getView().byId("bg_hbox").setVisible(false);
 			}
 			
 			
