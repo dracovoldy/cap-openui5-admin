@@ -47,28 +47,27 @@ sap.ui.define([
 			} else {
 				this.getView().byId("OTH_Check").setSelected(false);
 			}
-			
+
 			this.getView().byId("Scenarios1").setSelectedKey(this.getView().getModel().getProperty("/posting/sc_ints_v").toString());
 			this.getView().byId("Scenarios2").setSelectedKey(this.getView().getModel().getProperty("/posting/sc_unts_v").toString());
 			this.getView().byId("Scenarios3").setSelectedKey(this.getView().getModel().getProperty("/posting/sc_user_v").toString());
 			this.getView().byId("Lang_Select").setSelectedKey(this.getView().getModel().getProperty("/posting/sc_lang_v").toString());
-			
-			
+
 			this.getView().byId("LATAM_Plants").setSelectedKey(this.getView().getModel().getProperty("/posting/sc_loc_latam_va").toString());
 			this.getView().byId("LATAM_Off").setSelectedKey(this.getView().getModel().getProperty("/posting/sc_loc_latam_vb").toString());
 			this.getView().byId("LATAM_Dcs").setSelectedKey(this.getView().getModel().getProperty("/posting/sc_loc_latam_vc").toString());
 			this.getView().byId("LATAM_Sos").setSelectedKey(this.getView().getModel().getProperty("/posting/sc_loc_latam_vd").toString());
-			
+
 			this.getView().byId("EU_Plants").setSelectedKey(this.getView().getModel().getProperty("/posting/sc_loc_eu_va").toString());
 			this.getView().byId("EU_Off").setSelectedKey(this.getView().getModel().getProperty("/posting/sc_loc_eu_vb").toString());
 			this.getView().byId("EU_Dcs").setSelectedKey(this.getView().getModel().getProperty("/posting/sc_loc_eu_vc").toString());
 			this.getView().byId("EU_Sos").setSelectedKey(this.getView().getModel().getProperty("/posting/sc_loc_eu_vd").toString());
-			
+
 			this.getView().byId("APAC_Plants").setSelectedKey(this.getView().getModel().getProperty("/posting/sc_loc_apac_va").toString());
 			this.getView().byId("APAC_Off").setSelectedKey(this.getView().getModel().getProperty("/posting/sc_loc_apac_vb").toString());
 			this.getView().byId("APAC_Dcs").setSelectedKey(this.getView().getModel().getProperty("/posting/sc_loc_apac_vc").toString());
 			this.getView().byId("APAC_Sos").setSelectedKey(this.getView().getModel().getProperty("/posting/sc_loc_apac_vd").toString());
-			
+
 			this.getView().byId("NA_Plants").setSelectedKey(this.getView().getModel().getProperty("/posting/sc_loc_na_va").toString());
 			this.getView().byId("NA_Off").setSelectedKey(this.getView().getModel().getProperty("/posting/sc_loc_na_vb").toString());
 			this.getView().byId("NA_Dcs").setSelectedKey(this.getView().getModel().getProperty("/posting/sc_loc_na_vc").toString());
@@ -135,6 +134,20 @@ sap.ui.define([
 
 			if (EU_Plants > 0 || EU_Off > 0 || EU_Dcs > 0 || EU_Sos > 0) {
 				this.getView().getModel().setProperty("/posting/sc_reg_eu_x", "X");
+			}
+
+			if (this.getView().getModel().getProperty("/posting/sc_reg_eu_x") !== "X" && this.getView().getModel().getProperty(
+					"/posting/sc_reg_apac_x") !== "X" && this.getView().getModel().getProperty("/posting/sc_reg_latam_x") !== "X" && this.getView().getModel()
+				.getProperty("/posting/sc_reg_na_x") !== "X") {
+				MessageBox.information("Please input values at least for a single region", {
+					title: "Information", // default
+					onClose: null, // default
+					styleClass: "", // default
+					initialFocus: null, // default
+					textDirection: sap.ui.core.TextDirection.Inherit // default
+				});
+
+				return;
 			}
 
 			//LOB Checkboxes
