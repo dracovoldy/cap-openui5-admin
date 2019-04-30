@@ -6,13 +6,11 @@ sap.ui.define([
 	return Controller.extend("cap.estimate.controller.FinalDashBoard", {
 
 		onInit: function () {
-
 			this.router = this.getOwnerComponent().getRouter();
 			var globalModel = this.getOwnerComponent().getModel("init_data");
 			this.getView().setModel(globalModel);
 
 			this.router.attachRouteMatched(this.handleRouteMatched, this);
-
 		},
 		handleRouteMatched: function (evt) {
 			var that = this;
