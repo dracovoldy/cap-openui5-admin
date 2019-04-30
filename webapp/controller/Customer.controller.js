@@ -170,6 +170,9 @@ sap.ui.define([
 			this.getView().byId("capg_phone").setValueState("None");
 
 			return true;
+		},
+		backPress: function (oEvent){
+			this.router.navTo("Home");
 		}
 
 	});
