@@ -44,7 +44,8 @@
 							<core:Title text="Program objective"/>
 							<TextArea id="prog" value="{/posting/bg_prog_desc}" growing="true" growingMaxLines="7" width="100%" maxLength="250"></TextArea>
 							<core:Title text="Key business pain points"/>
-							<TextArea id="pain" value="{/posting/bg_bizp_desc}" growing="true" growingMaxLines="7" width="100%" maxLength="250"></f:content>
+							<TextArea id="pain" value="{/posting/bg_bizp_desc}" growing="true" growingMaxLines="7" width="100%" maxLength="250"></TextArea>
+							</f:content>
 						</f:SimpleForm>
 					</content>
 				</Panel>
