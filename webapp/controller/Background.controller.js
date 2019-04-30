@@ -40,7 +40,7 @@ sap.ui.define([
 			} else {
 				this.getView().getModel().setProperty("/BackgroundCheck/sapCheck2", false);
 			}
-			
+
 			if (this.getView().getModel().getProperty("/posting/bg_othinterest1") === "Y") {
 				this.getView().getModel().setProperty("/BackgroundCheck/nsCheck1", true);
 			} else {
@@ -71,8 +71,7 @@ sap.ui.define([
 				this.getView().byId("grpA2").setSelected(false);
 				this.getView().byId("bg_hbox").setVisible(false);
 			}
-			
-			
+
 		},
 		isExisting: function (oEvent) {
 			var data = oEvent.getParameters("selected");
@@ -81,14 +80,14 @@ sap.ui.define([
 			if (data.selected) {
 				this.getView().byId("bg_hbox").setVisible(true);
 				this.getView().getModel().setProperty("/posting/bg_newcust", "N");
-			
+
 			} else {
 				this.getView().byId("bg_hbox").setVisible(false);
 				this.getView().getModel().setProperty("/posting/bg_newcust", "Y");
 				this.getView().getModel().setProperty("/posting/bg_impyear", "0000");
 			}
 		},
-		changeYear: function (oEvent){
+		changeYear: function (oEvent) {
 			var iYear = this.getView().byId("impYear").getSelectedKey();
 			this.getView().getModel().setProperty("/posting/bg_impyear", iYear);
 		},
