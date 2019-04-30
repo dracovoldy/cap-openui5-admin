@@ -66,7 +66,7 @@ sap.ui.define([
 
 			/* LoginPage */
 			var loginFooter = this.getView().byId("loginFooter");
-			loginFooter.setText("Made with ❤ in UI5 + Node.js");
+			loginFooter.setText("Content best viewed in modern browsers\nlike Chrome, Firefox.");
 		},
 		addAllCSS: function () {
 			/* UI references */
