@@ -63,6 +63,18 @@
 					</f:SimpleForm>
 				</content>
 			</Panel>
+			<Panel width="auto" class="sapUiResponsiveMargin noBorder">
+				<content>
+					<f:SimpleForm id="InfraForm3" editable="true" layout="ResponsiveGridLayout" labelSpanXL="12" labelSpanL="12" labelSpanM="12" labelSpanS="12"
+						adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1"
+						singleContainerFullSize="false">
+						<f:content>
+							<core:Title text="Comments"/>
+							<TextArea id="infra_comm" value="{/posting/infra_comm}" growing="true" growingMaxLines="7" width="100%"/>
+						</f:content>
+					</f:SimpleForm>
+				</content>
+			</Panel>
 			<Panel width="auto" class="sapUiResponsiveMargin noBorder boxMdl">
 				<Button text="Previous" type="Emphasized" class="backBtn"/>
 				<ToolbarSpacer/>

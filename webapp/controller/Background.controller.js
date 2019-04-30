@@ -59,6 +59,7 @@ sap.ui.define([
 			if (this.getView().getModel().getProperty("/posting/bg_newcust") === "Y") {
 				this.getView().byId("grpA1").setSelected(false);
 				this.getView().byId("grpA2").setSelected(true);
+				this.getView().byId("impYear").setSelectedKey(this.getView().getModel().getProperty("/posting/bg_impyear"));
 			} else if (this.getView().getModel().getProperty("/posting/bg_newcust") === "N") {
 				this.getView().byId("grpA1").setSelected(true);
 				this.getView().byId("grpA2").setSelected(false);
@@ -79,6 +80,10 @@ sap.ui.define([
 				this.getView().getModel().setProperty("/posting/bg_newcust", "Y");
 				this.getView().getModel().setProperty("/posting/bg_impyear", "0000");
 			}
+		},
+		changeYear: function (oEvent){
+			var iYear = this.getView().byId("impYear").getSelectedKey();
+			this.getView().getModel().setProperty("/posting/bg_impyear", iYear);
 		},
 		attachPopoverOnMouseover: function (targetControl, popover) {
 			targetControl.addEventDelegate({
