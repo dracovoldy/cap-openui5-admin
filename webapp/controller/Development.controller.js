@@ -12,11 +12,15 @@ sap.ui.define([
 			if (this.getView().getModel().getProperty("/tableData").length > 0) {
 				this.parseData();
 			}
+			this.router.attachRouteMatched(this.handleRouteMatched, this);
 		},
-		onBeforeRendering: function () {
-			if (this.getView().getModel().getProperty("/tableData").length > 0) {
-				this.parseData();
+		handleRouteMatched: function (evt) {
+			if (evt.getParameter("name") !== "Development") {
+				if (this.getView().getModel().getProperty("/tableData").length > 0) {
+					this.parseData();
+				}
 			}
+
 		},
 		parseData: function () {
 			var aKeys = this.getView().getModel().getProperty("/posting/if_dev_mdlw_desc").split(",");

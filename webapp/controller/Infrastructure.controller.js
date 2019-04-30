@@ -13,10 +13,13 @@ sap.ui.define([
 			if (this.getView().getModel().getProperty("/tableData").length > 0) {
 				this.parseData();
 			}
+			this.router.attachRouteMatched(this.handleRouteMatched, this);
 		},
-		onBeforeRendering: function () {
-			if (this.getView().getModel().getProperty("/tableData").length > 0) {
-				this.parseData();
+		handleRouteMatched: function (evt) {
+			if (evt.getParameter("name") !== "Infrastructure") {
+				if (this.getView().getModel().getProperty("/tableData").length > 0) {
+					this.parseData();
+				}
 			}
 		},
 		parseData: function () {
@@ -24,63 +27,63 @@ sap.ui.define([
 			this.getView().byId("Enhancement_Select").setSelectedKey(this.getView().getModel().getProperty("/posting/if_plvl_v").toString());
 			this.getView().byId("Systems_Select").setSelectedKey(this.getView().getModel().getProperty("/posting/if_syscon_v").toString());
 			this.getView().byId("Size_Select").setSelectedKey(this.getView().getModel().getProperty("/posting/if_sysize_v").toString());
-			
+
 			var selKeys = [];
-			if(this.getView().getModel().getProperty("/posting/if_key_ecc_v") > 0){
+			if (this.getView().getModel().getProperty("/posting/if_key_ecc_v") > 0) {
 				selKeys.push("0");
 			}
-			if(this.getView().getModel().getProperty("/posting/if_key_arib_v") > 0){
+			if (this.getView().getModel().getProperty("/posting/if_key_arib_v") > 0) {
 				selKeys.push("1");
 			}
-			if(this.getView().getModel().getProperty("/posting/if_key_conc_v") > 0){
+			if (this.getView().getModel().getProperty("/posting/if_key_conc_v") > 0) {
 				selKeys.push("2");
 			}
-			if(this.getView().getModel().getProperty("/posting/if_key_fiel_v") > 0){
+			if (this.getView().getModel().getProperty("/posting/if_key_fiel_v") > 0) {
 				selKeys.push("3");
 			}
-			if(this.getView().getModel().getProperty("/posting/if_key_sf_v") > 0){
+			if (this.getView().getModel().getProperty("/posting/if_key_sf_v") > 0) {
 				selKeys.push("4");
 			}
-			if(this.getView().getModel().getProperty("/posting/if_key_solm_v") > 0){
+			if (this.getView().getModel().getProperty("/posting/if_key_solm_v") > 0) {
 				selKeys.push("5");
 			}
-			if(this.getView().getModel().getProperty("/posting/if_key_ewm_v") > 0){
+			if (this.getView().getModel().getProperty("/posting/if_key_ewm_v") > 0) {
 				selKeys.push("6");
 			}
-			if(this.getView().getModel().getProperty("/posting/if_key_gts_v") > 0){
+			if (this.getView().getModel().getProperty("/posting/if_key_gts_v") > 0) {
 				selKeys.push("7");
 			}
-			if(this.getView().getModel().getProperty("/posting/if_key_attp_v") > 0){
+			if (this.getView().getModel().getProperty("/posting/if_key_attp_v") > 0) {
 				selKeys.push("8");
 			}
-			if(this.getView().getModel().getProperty("/posting/if_key_tms_v") > 0){
+			if (this.getView().getModel().getProperty("/posting/if_key_tms_v") > 0) {
 				selKeys.push("9");
 			}
-			if(this.getView().getModel().getProperty("/posting/if_key_apo_v") > 0){
+			if (this.getView().getModel().getProperty("/posting/if_key_apo_v") > 0) {
 				selKeys.push("10");
 			}
-			if(this.getView().getModel().getProperty("/posting/if_key_vistx_v") > 0){
+			if (this.getView().getModel().getProperty("/posting/if_key_vistx_v") > 0) {
 				selKeys.push("11");
 			}
-			if(this.getView().getModel().getProperty("/posting/if_key_mdg_v") > 0){
+			if (this.getView().getModel().getProperty("/posting/if_key_mdg_v") > 0) {
 				selKeys.push("12");
 			}
-			if(this.getView().getModel().getProperty("/posting/if_key_optx_v") > 0){
+			if (this.getView().getModel().getProperty("/posting/if_key_optx_v") > 0) {
 				selKeys.push("13");
 			}
-			if(this.getView().getModel().getProperty("/posting/if_key_bpc_v") > 0){
+			if (this.getView().getModel().getProperty("/posting/if_key_bpc_v") > 0) {
 				selKeys.push("14");
 			}
-			if(this.getView().getModel().getProperty("/posting/if_key_bw_v") > 0){
+			if (this.getView().getModel().getProperty("/posting/if_key_bw_v") > 0) {
 				selKeys.push("15");
 			}
-			if(this.getView().getModel().getProperty("/posting/if_key_grc_v") > 0){
+			if (this.getView().getModel().getProperty("/posting/if_key_grc_v") > 0) {
 				selKeys.push("16");
 			}
-			if(this.getView().getModel().getProperty("/posting/if_key_others_v") > 0){
+			if (this.getView().getModel().getProperty("/posting/if_key_others_v") > 0) {
 				selKeys.push("17");
 			}
-			
+
 			this.getView().byId("KeySap_Multi").setSelectedKeys(selKeys);
 
 		},
