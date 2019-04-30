@@ -16,8 +16,9 @@ sap.ui.define([
 			var globalModel = this.getOwnerComponent().getModel("init_data");
 			this.getView().setModel(globalModel);
 
+		
 			this.attachPopoverOnMouseover(this.byId("drive"), this.byId("popover_it"));
-			this.attachPopoverOnMouseover(this.byId("pain"), this.byId("popover_pain"));
+			this.attachPopoverOnMouseover(this.byId("biz"), this.byId("popover_biz"));
 
 			if (this.getView().getModel().getProperty("/tableData").length > 0) {
 				this.parseData();
@@ -264,6 +265,9 @@ sap.ui.define([
 			this.getView().byId("case").setValueState("None");
 
 			return true;
+		},
+		backPress: function (oEvent){
+			this.router.navTo("Customer");
 		}
 
 	});

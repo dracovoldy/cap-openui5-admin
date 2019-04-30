@@ -43,82 +43,81 @@
 						<f:content>
 							<core:Title text="Program objective"/>
 							<TextArea id="prog" value="{/posting/bg_prog_desc}" growing="true" growingMaxLines="7" width="100%" maxLength="250"></TextArea>
-							<core:Title text="Business drivers"/>
-							<TextArea id="biz" value="{/posting/bg_bizd_desc}" growing="true" growingMaxLines="7" width="100%" maxLength="250"/>
-						</f:content>
-					</f:SimpleForm>
-				</content>
-			</Panel>
-			<Panel width="auto" class="sapUiResponsiveMargin noBorder">
-				<content>
-					<f:SimpleForm id="BackForm2" editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="12"
-						adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="3" columnsL="2" columnsM="2"
-						singleContainerFullSize="false">
-						<f:content>
-							<core:Title text="IT drivers"/>
-							<TextArea id="drive" value="{/posting/bg_itdr_desc}" growing="true" growingMaxLines="7" width="100%" maxLength="250">
-								<dependents>
-									<ResponsivePopover id="popover_it" title="Help" class="sapUiPopupWithPadding" placement="Top">
-										<content>
-											<VBox>
-												<Text text="Support innovative business models and products" class="sapUiTinyMarginBottom"></Text>
-												<Text text="Grow revenue and reduce costs" class="sapUiTinyMarginBottom"></Text>
-												<Text text="Simplify business processes" class="sapUiTinyMarginBottom"></Text>
-												<Text text="Enhance business agility and productivity" class="sapUiTinyMarginBottom"></Text>
-												<Text text="Optimize operations and supply chain" class="sapUiTinyMarginBottom"></Text>
-											</VBox>
-										</content>
-									</ResponsivePopover>
-								</dependents>
-							</TextArea>
 							<core:Title text="Key business pain points"/>
-							<TextArea id="pain" value="{/posting/bg_bizp_desc}" growing="true" growingMaxLines="7" width="100%" maxLength="250">
-								<dependents>
-									<ResponsivePopover id="popover_pain" title="Help" class="sapUiPopupWithPadding" placement="Top">
-										<content>
-											<VBox>
-												<Text text="Gain strategic advantage with a digital core" class="sapUiTinyMarginBottom"></Text>
-												<Text text="Reduce disruptions, time and costs to support changes" class="sapUiTinyMarginBottom"></Text>
-												<Text text="Simplify architecture and enable real time integration" class="sapUiTinyMarginBottom"></Text>
-												<Text text="Harness and drive IoT for better visibility" class="sapUiTinyMarginBottom"></Text>
-												<Text text="Benefit from open architecture" class="sapUiTinyMarginBottom"></Text>
-											</VBox>
-										</content>
-									</ResponsivePopover>
-								</dependents>
-							</TextArea>
-						</f:content>
-					</f:SimpleForm>
-				</content>
-			</Panel>
-			<Panel width="auto" class="sapUiResponsiveMargin noBorder">
-				<content>
-					<f:SimpleForm id="BackForm3" editable="true" layout="ResponsiveGridLayout" labelSpanXL="12" labelSpanL="12" labelSpanM="12" labelSpanS="12"
-						adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1"
-						singleContainerFullSize="false">
-						<f:content>
-							<core:Title text="Business case status and additional capabilities required"/>
-							<TextArea id="case" value="{/posting/bg_bcad_desc}" growing="true" growingMaxLines="7" width="100%" maxLength="250"/>
-						</f:content>
-					</f:SimpleForm>
-				</content>
-			</Panel>
-			<Panel width="auto" class="sapUiResponsiveMargin noBorder boxMdl">
-				<Button text="Previous" type="Emphasized" class="backBtn" press="nextPress"/>
-				<ToolbarSpacer/>
-				<Button text="Next" type="Emphasized" class="nextBtn" press="nextPress"/>
-			</Panel>
-		</content>
-		<footer>
-			<Toolbar height="1.5em" class="custFooter">
-				<ToolbarSpacer/>
-				<Label text="The information contained in this document is proprietary. Copyright © 2019 Capgemini. All rights reserved." class="labelFont">
-					<layoutData>
-						<ToolbarLayoutData shrinkable="true" minWidth="200px"/>
-					</layoutData>
-				</Label>
-				<ToolbarSpacer/>
-			</Toolbar>
-		</footer>
-	</Page>
-</mvc:View>
+							<TextArea id="pain" value="{/posting/bg_bizp_desc}" growing="true" growingMaxLines="7" width="100%" maxLength="250"></f:content>
+						</f:SimpleForm>
+					</content>
+				</Panel>
+				<Panel width="auto" class="sapUiResponsiveMargin noBorder">
+					<content>
+						<f:SimpleForm id="BackForm2" editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="12"
+							adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="3" columnsL="2" columnsM="2"
+							singleContainerFullSize="false">
+							<f:content>
+								<core:Title text="IT drivers"/>
+								<TextArea id="drive" value="{/posting/bg_itdr_desc}" growing="true" growingMaxLines="7" width="100%" maxLength="250">
+									<dependents>
+										<ResponsivePopover id="popover_it" title="Help" class="sapUiPopupWithPadding" placement="Top">
+											<content>
+												<VBox>
+													<Text text="Gain strategic advantage with a digital core" class="sapUiTinyMarginBottom"></Text>
+													<Text text="Reduce disruptions, time and costs to support changes" class="sapUiTinyMarginBottom"></Text>
+													<Text text="Simplify architecture and enable real time integration" class="sapUiTinyMarginBottom"></Text>
+													<Text text="Harness and drive IoT for better visibility" class="sapUiTinyMarginBottom"></Text>
+													<Text text="Benefit from open architecture" class="sapUiTinyMarginBottom"></Text>
+												</VBox>
+											</content>
+										</ResponsivePopover>
+									</dependents>
+								</TextArea>
+								<core:Title text="Business drivers"/>
+								<TextArea id="biz" value="{/posting/bg_bizd_desc}" growing="true" growingMaxLines="7" width="100%" maxLength="250">
+									<dependents>
+										<ResponsivePopover id="popover_biz" title="Help" class="sapUiPopupWithPadding" placement="Top">
+											<content>
+												<VBox>
+													<Text text="Support innovative business models and products" class="sapUiTinyMarginBottom"></Text>
+													<Text text="Grow revenue and reduce costs" class="sapUiTinyMarginBottom"></Text>
+													<Text text="Simplify business processes" class="sapUiTinyMarginBottom"></Text>
+													<Text text="Enhance business agility and productivity" class="sapUiTinyMarginBottom"></Text>
+													<Text text="Optimize operations and supply chain" class="sapUiTinyMarginBottom"></Text>
+												</VBox>
+											</content>
+										</ResponsivePopover>
+									</dependents>
+								</TextArea>
+							</f:content>
+						</f:SimpleForm>
+					</content>
+				</Panel>
+				<Panel width="auto" class="sapUiResponsiveMargin noBorder">
+					<content>
+						<f:SimpleForm id="BackForm3" editable="true" layout="ResponsiveGridLayout" labelSpanXL="12" labelSpanL="12" labelSpanM="12" labelSpanS="12"
+							adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1"
+							singleContainerFullSize="false">
+							<f:content>
+								<core:Title text="Business case status and additional capabilities required"/>
+								<TextArea id="case" value="{/posting/bg_bcad_desc}" growing="true" growingMaxLines="7" width="100%" maxLength="250"/>
+							</f:content>
+						</f:SimpleForm>
+					</content>
+				</Panel>
+				<Panel width="auto" class="sapUiResponsiveMargin noBorder boxMdl">
+					<Button text="Previous" type="Emphasized" class="backBtn" press="backPress"/>
+					<ToolbarSpacer/>
+					<Button text="Next" type="Emphasized" class="nextBtn" press="nextPress"/>
+				</Panel>
+			</content>
+			<footer>
+				<Toolbar height="1.5em" class="custFooter">
+					<ToolbarSpacer/>
+					<Label text="The information contained in this document is proprietary. Copyright © 2019 Capgemini. All rights reserved." class="labelFont">
+						<layoutData>
+							<ToolbarLayoutData shrinkable="true" minWidth="200px"/>
+						</layoutData>
+					</Label>
+					<ToolbarSpacer/>
+				</Toolbar>
+			</footer>
+		</Page>
+	</mvc:View>

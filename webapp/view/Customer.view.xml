@@ -98,6 +98,7 @@
 						</HBox>-->
 			<!--	</VBox>-->
 			<Panel width="auto" class="sapUiResponsiveMargin noBorder boxMdl">
+				<Button text="Back" type="Emphasized" class="nextBtn" press="backPress"/>
 				<ToolbarSpacer/>
 				<Button text="Next" type="Emphasized" class="nextBtn" press="nextPress"/>
 			</Panel>

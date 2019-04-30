@@ -16,7 +16,7 @@
 								<Carousel class="sapUiContentPadding" loop="true" height="100%">
 									<pages>
 										<VBox class="bgWhiteBox">
-											<Text text="Typical S4/HANA System Conversion"/>
+											<Text text="Typical S4/HANA System Conversion Timeline"/>
 											<HBox width="100%" class="divide3">
 												<VBox class="div1">
 													<Title text="As Short as" class="sapUiSmallMargin subSection"/>

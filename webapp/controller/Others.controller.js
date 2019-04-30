@@ -49,6 +49,9 @@ sap.ui.define([
 				}
 			});
 
+		},
+		backPress: function (oEvent){
+			this.router.navTo("Management");
 		}
 
 	});
