@@ -14,7 +14,7 @@ sap.ui.define([
 		},
 		handleRouteMatched: function (evt) {
 			var that = this;
-			var estimateId = this.getView().getModel().getProperty("/estimateId");
+			var estimateId = this.getView().getModel().getProperty("/posting/entry_id");
 
 			var url = "http://10.154.52.73:3000/api/data/" + estimateId;
 

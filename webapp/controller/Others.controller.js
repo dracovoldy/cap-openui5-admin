@@ -32,7 +32,7 @@ sap.ui.define([
 				success: function (data) {
 					console.log(data);
 
-					that.getView().getModel().setProperty("/estimateId", data.insertId);
+					
 					MessageBox.success("Estimate Modified for: " + Customer + "\n Capgemini PoC: " + CapgContact, {
 						title: "Success",
 						actions: [sap.m.MessageBox.Action.OK],
