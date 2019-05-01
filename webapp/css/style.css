@@ -365,8 +365,8 @@ html.sap-desktop .sapMShellAppWidthLimited .sapMShellCentralBox {
     height: 700px!important;
 }
 
-#__title2::before, 
-#__title3::before{
+#__title2::before,
+#__title3::before {
     content: "*" !important;
     color: #c14646!important;
     font-size: 1.25rem!important;
@@ -384,4 +384,10 @@ html.sap-desktop .sapMShellAppWidthLimited .sapMShellCentralBox {
     position: relative!important;
     vertical-align: middle!important;
     line-height: 0!important;
+}
+
+.linkCss {
+    color: #0056f8 !important;
+    text-decoration: underline !important;
+    text-shadow: none !important;
 }

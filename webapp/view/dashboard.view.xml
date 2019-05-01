@@ -10,13 +10,16 @@
 				</Button>
 				<ToolbarSpacer width="20px"/>
 				<Image src="./images/logo.gif" width="125px" height="30px" class="logoImage"/>
-				<Text class="toolbarHeading" text="Renewable Enterprise Assessment Tool"/>
+				<Text class="toolbarHeading" text="Renewable Enterprise Assessment Tool - App to Modify Entries"/>
+				<Link class="sapUiLargeMarginBegin linkCss" textAlign="End" text="Please use this link for new entries" target="_self" href="http://sapphireco.aws.capsapsl.com:8080"/>
 				<tnt:ToolHeaderUtilitySeparator/>
 				<ToolbarSpacer>
+					
 					<layoutData>
 						<OverflowToolbarLayoutData priority="NeverOverflow" minWidth="20px"/>
 					</layoutData>
 				</ToolbarSpacer>
+				
 				<Button text="Capgemini User" type="Transparent" press="handleUserNamePress">
 					<layoutData>
 						<OverflowToolbarLayoutData priority="NeverOverflow"/>
@@ -26,7 +29,7 @@
 		</tnt:header>
 		<tnt:sideContent class="sideNavItem">
 			<tnt:SideNavigation expanded="true" class="firstNav" itemSelect="onItemSelect">
-				<tnt:NavigationList id="navListItems" class="navItemsCls" selectedKey="{/navSelectedKey}" >
+				<tnt:NavigationList id="navListItems" class="navItemsCls" selectedKey="{/navSelectedKey}">
 					<tnt:items>
 						<tnt:NavigationListItem id="nav_comp" text="Company" icon="sap-icon://account" key="Customer"/>
 						<tnt:NavigationListItem id="nav_back" text="Background" icon="sap-icon://idea-wall" key="Background"/>
